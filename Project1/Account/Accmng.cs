@@ -52,7 +52,7 @@ namespace Project1
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-            mail.From = new MailAddress("shahzaibsherali007@gmail.com");
+            mail.From = new MailAddress("youremail@gmail.com");
             foreach (var list in facmng.Email(Convert.ToInt32(readkey())))
             {
                 mail.To.Add(list);
@@ -61,7 +61,7 @@ namespace Project1
             mail.Body = "Assignment has been Uploaded";
 
             SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("shahzaibsherali007@gmail.com", "muradani101");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("youremail@gmail.com", "yourpassword");
             SmtpServer.EnableSsl = true;
             SmtpServer.Send(mail);
             MessageBox.Show("Mail sent", "Success", MessageBoxButtons.OK);
